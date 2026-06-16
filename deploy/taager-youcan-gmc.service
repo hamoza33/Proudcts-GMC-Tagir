@@ -1,0 +1,14 @@
+[Unit]
+Description=Taager YouCan GMC Sync
+After=network.target
+
+[Service]
+User=aichaguimaoune
+WorkingDirectory=/home/aichaguimaoune/taager-youcan-gmc-sync
+EnvironmentFile=/home/aichaguimaoune/taager-youcan-gmc-sync/.env
+ExecStart=/home/aichaguimaoune/taager-youcan-gmc-sync/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8011
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
